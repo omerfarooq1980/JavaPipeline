@@ -1,18 +1,17 @@
 pipeline{
 	agent any
 	stages{
-		stage ('Compile'){
+		stage ('Compile..'){
 			steps{
-				withJava(java : 'jdk1.8.0_202'){
-					sh 'javac'
-				}
+				echo 'Compile'
+				bat 'javac'
+				
 			}
 		}
 		stage ('Run'){
 			steps{
-				withJava(java : 'jdk1.8.0_202'){
-					sh 'java'
-				}
+				echo 'Run..'
+				
 			}
 		}
 	}
